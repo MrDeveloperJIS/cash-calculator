@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Cash Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header class="topbar">
+        <h1>Cash Calculator</h1>
+        <div class="topbar-actions">
+            <button id="resetBtn" class="icon-btn" title="Reset" aria-label="Reset">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12a9 9 0 1 1-2.64-6.36" />
+                    <polyline points="21 3 21 9 15 9" />
+                </svg>
+            </button>
+            <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CALCULATOR VIEW -->
+    <main id="calcView" class="view">
+        <div id="noteRows" class="note-rows"></div>
+
+        <div class="total-box">
+            <div class="total-amount">
+                <span>Total:</span>
+                <span id="totalNumber">৳ 0</span>
+            </div>
+            <div class="total-words" id="totalWords">Zero Cash</div>
+        </div>
+    </main>
+
+    <!-- SETTINGS VIEW -->
+    <section id="settingsView" class="view hidden">
+        <h2>Settings</h2>
+
+        <div class="setting-group">
+            <label>Theme</label>
+            <div class="theme-options">
+                <button data-theme="light" class="theme-btn">Light</button>
+                <button data-theme="dark" class="theme-btn">Dark</button>
+                <button data-theme="system" class="theme-btn">System</button>
+            </div>
+        </div>
+
+        <div class="setting-group">
+            <label for="currencySelect">Currency</label>
+            <select id="currencySelect" class="currency-select">
+                <option value="BDT">৳ BDT — Bangladeshi Taka</option>
+                <option value="INR">₹ INR — Indian Rupee</option>
+                <option value="USD">$ USD — US Dollar</option>
+                <option value="EUR">€ EUR — Euro</option>
+                <option value="GBP">£ GBP — British Pound</option>
+            </select>
+        </div>
+
+        <div class="setting-group">
+            <label>Note / Coin Denominations</label>
+            <div id="denomList" class="denom-list"></div>
+            <div class="add-denom">
+                <input type="number" id="newDenomInput" placeholder="e.g. 500" min="1" />
+                <button id="addDenomBtn">Add</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

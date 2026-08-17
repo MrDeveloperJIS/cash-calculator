@@ -1,0 +1,278 @@
+:root {
+    --bg: #f5f6f8;
+    --card-bg: #ffffff;
+    --text: #1a1a1a;
+    --subtext: #6b7280;
+    --border: #e2e4e9;
+    --accent: #0f9d58;
+    --accent-text: #ffffff;
+    --danger: #e5484d;
+    --input-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+    --bg: #16181d;
+    --card-bg: #1f222a;
+    --text: #f2f3f5;
+    --subtext: #9aa0ab;
+    --border: #2c2f38;
+    --accent: #22c55e;
+    --accent-text: #0a0a0a;
+    --danger: #f87171;
+    --input-bg: #262933;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 512px;
+    max-height: 720px;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.15s ease, color 0.15s ease;
+    overflow-y: auto;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.topbar h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    padding: 6px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.icon-btn:hover {
+    background: var(--border);
+}
+
+.icon-btn:active {
+    transform: scale(0.92);
+}
+
+.icon-btn svg {
+    display: block;
+}
+
+.view {
+    padding: 16px 18px 24px;
+}
+
+.hidden {
+    display: none;
+}
+
+.note-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.note-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 12px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.note-row .note-label {
+    width: 70px;
+    font-weight: 600;
+}
+
+.note-row input[type="number"] {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--input-bg);
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.note-row input[type="number"]:focus {
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.note-row .subtotal {
+    width: 90px;
+    text-align: right;
+    color: var(--subtext);
+    font-variant-numeric: tabular-nums;
+}
+
+.total-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.total-words {
+    margin-top: 6px;
+    color: var(--subtext);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.secondary-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.secondary-btn:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.setting-group {
+    margin-bottom: 22px;
+}
+
+.setting-group>label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.theme-options {
+    display: flex;
+    gap: 8px;
+}
+
+.theme-btn {
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.theme-btn.active {
+    background: var(--accent);
+    color: var(--accent-text);
+    border-color: var(--accent);
+}
+
+.denom-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.denom-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 10px;
+    font-size: 13px;
+}
+
+.denom-chip button {
+    background: none;
+    border: none;
+    color: var(--danger);
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.currency-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--input-bg);
+    color: var(--text);
+    font-size: 14px;
+}
+
+.add-denom {
+    display: flex;
+    gap: 8px;
+}
+
+.add-denom input {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--input-bg);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.add-denom input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.add-denom button {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    background: var(--accent);
+    color: var(--accent-text);
+    cursor: pointer;
+}

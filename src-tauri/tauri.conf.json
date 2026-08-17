@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Cash Calculator",
+  "version": "1.0.0",
+  "identifier": "com.mrjis.cashcalculator",
+  "build": {
+    "frontendDist": "../src"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Cash Calculator",
+        "width": 400,
+        "height": 625,
+        "minWidth": 380,
+        "minHeight": 512,
+        "maxWidth": 512,
+        "maxHeight": 720,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "msi",
+      "nsis"
+    ],
+    "publisher": "Md. Jahidul Islam Sujan",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ]
+  }
+}
