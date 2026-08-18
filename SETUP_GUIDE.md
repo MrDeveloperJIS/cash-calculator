@@ -92,7 +92,7 @@ npm run tauri build
 ```
 When it finishes, find your installer here:
 ```
-src-tauri\target\release\bundle\nsis\Cash Calculator_1.0.0_x64-setup.exe
+src-tauri\target\release\bundle\nsis\Cash Calculator_x.x.x_x64-setup.exe
 ```
 (there's also an `.msi` in the `msi` folder — either works). That file is
 the one you share with users, around 3–8 MB.

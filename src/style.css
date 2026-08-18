@@ -26,15 +26,16 @@
     box-sizing: border-box;
 }
 
-html,
-body {
-    max-width: 512px;
-    max-height: 720px;
+html {
     height: 100%;
+    background: var(--bg);
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
+    max-width: 512px;
+    max-height: 720px;
+    height: 100%;
     font-family: "Segoe UI", system-ui, sans-serif;
     background: var(--bg);
     color: var(--text);
